@@ -17,11 +17,13 @@ public abstract class Item {
     @Column(name = "item_id")
     private Long id;
 
-    private String name; private int price;
+    private String name;
+
+    private int price;
 
     private int stockQuantity;
 
-    @ManyToMany(mappedBy = "items")
+    @ManyToMany(mappedBy = "items") //업무에서는 실제 사용하지 않음
     private List<Category> categories = new ArrayList<Category>();
 
     public void removeStock(int orderQuantity) {

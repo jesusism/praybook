@@ -1,11 +1,11 @@
 package weawe.praybook.domain;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import weawe.praybook.domain.BaseTimeEntity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -13,8 +13,9 @@ import javax.persistence.*;
 public class User extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
+    @GeneratedValue
+    @Column(name = "member_id")
+    private Long id;
 
     @Column(nullable = false)
     private String user_name;
@@ -25,21 +26,7 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private int user_church;
 
-    /*
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String content;
-    */
+    @OneToMany(mappedBy = "user")
+    private List<Pray> prays = new ArrayList<>();
 
-    @Builder
-    public User(String user_name, String user_email, int user_church) {
-        this.user_name = user_name;
-        this.user_email = user_email;
-        this.user_church = user_church;
-    }
-
-    public void update(String name, String email, int user_church) {
-        this.user_name = user_name;
-        this.user_email = user_email;
-        this.user_church = user_church;
-    }
 }
