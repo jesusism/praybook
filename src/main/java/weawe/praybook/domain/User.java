@@ -1,5 +1,6 @@
 package weawe.praybook.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -28,5 +29,18 @@ public class User extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "user")
     private List<Pray> prays = new ArrayList<>();
+
+    @Builder
+    public User(String user_name, String user_email, int user_church) {
+        this.user_name = user_name;
+        this.user_email = user_email;
+        this.user_church = user_church;
+    }
+
+    public void update(String user_name, String user_email, int user_church) {
+        this.user_name = user_name;
+        this.user_email = user_email;
+        this.user_church = user_church;
+    }
 
 }

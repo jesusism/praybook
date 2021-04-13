@@ -1,13 +1,13 @@
-package weawe.praybook.domain;
+package weawe.praybook.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import weawe.praybook.domain.posts.Posts;
+import weawe.praybook.domain.User;
 
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<Posts, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("SELECT u From User u ORDER BY u.user_id DESC")
-    List<Posts> findAllDesc();
+    List<User> findAllDesc();
 }
