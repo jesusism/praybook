@@ -15,7 +15,7 @@ public class User extends BaseTimeEntity {
 
     @Id
     @GeneratedValue
-    @Column(name = "member_id")
+    @Column(name = "user_id")
     private Long id;
 
     @Column(nullable = false)

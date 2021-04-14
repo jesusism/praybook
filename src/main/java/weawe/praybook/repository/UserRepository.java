@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query("SELECT u From User u ORDER BY u.user_id DESC")
+    @Query("SELECT u From User u ORDER BY u.id DESC")
     List<User> findAllDesc();
 }

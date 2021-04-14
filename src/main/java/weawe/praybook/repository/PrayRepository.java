@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface PrayRepository extends JpaRepository<Pray, Long> {
 
-    @Query("SELECT p From Pray p ORDER BY p.pray_id DESC")
+    @Query("SELECT p From Pray p ORDER BY p.id DESC")
     List<Pray> findAllDesc();
 }

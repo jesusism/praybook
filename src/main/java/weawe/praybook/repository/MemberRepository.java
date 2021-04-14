@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    @Query("SELECT m From Member m ORDER BY p.member_id DESC")
+    @Query("SELECT m From Member m ORDER BY m.id DESC")
     List<Member> findAllDesc();
 }
