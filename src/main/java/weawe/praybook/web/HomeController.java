@@ -35,6 +35,6 @@ public class HomeController {
     @GetMapping(value = "/group/new")
     public String createGroup(Model model) {
         model.addAttribute("groupSaveRequestDto", new GroupSaveRequestDto());
-        return "user/createPrayForm";
+        return "user/createGroupForm";
     }
 }
