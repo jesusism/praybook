@@ -10,10 +10,10 @@ import weawe.praybook.domain.User;
 public class UserSaveRequestDto {
     private String user_name;
     private String user_email;
-    private int user_church;
+    private String user_church;
 
     @Builder
-    public UserSaveRequestDto(String user_name, String user_email, int user_church) {
+    public UserSaveRequestDto(String user_name, String user_email, String user_church) {
         this.user_name = user_name;
         this.user_email = user_email;
         this.user_church = user_church;

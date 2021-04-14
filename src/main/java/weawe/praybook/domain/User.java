@@ -25,19 +25,19 @@ public class User extends BaseTimeEntity {
     private String user_email;
 
     @Column(nullable = false)
-    private int user_church;
+    private String user_church;
 
     @OneToMany(mappedBy = "user")
     private List<Pray> prays = new ArrayList<>();
 
     @Builder
-    public User(String user_name, String user_email, int user_church) {
+    public User(String user_name, String user_email, String user_church) {
         this.user_name = user_name;
         this.user_email = user_email;
         this.user_church = user_church;
     }
 
-    public void update(String user_name, String user_email, int user_church) {
+    public void update(String user_name, String user_email, String user_church) {
         this.user_name = user_name;
         this.user_email = user_email;
         this.user_church = user_church;

@@ -11,7 +11,7 @@ public class UserListResponseDto {
     private Long id;
     private String user_name;
     private String user_email;
-    private int user_church;
+    private String user_church;
 
     public UserListResponseDto(User entity) {
         this.id = entity.getId();
