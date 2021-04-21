@@ -3,17 +3,13 @@ package weawe.praybook.web;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import weawe.praybook.web.dto.GroupSaveRequestDto;
-import weawe.praybook.web.dto.PraySaveRequestDto;
-import weawe.praybook.web.dto.UserSaveRequestDto;
 
 @RequiredArgsConstructor
 @Controller
 @Slf4j
 public class HomeController {
 
+    /*
     @GetMapping(value = "/")
     public String home() {
         log.info("home controller");
@@ -40,4 +36,5 @@ public class HomeController {
         log.info("HomeController-createGroup");
         return "group/createGroupForm";
     }
+    */
 }

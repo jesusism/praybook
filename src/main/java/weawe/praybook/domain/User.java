@@ -24,7 +24,7 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private String user_email;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String user_church;
 
     @OneToMany(mappedBy = "user")
