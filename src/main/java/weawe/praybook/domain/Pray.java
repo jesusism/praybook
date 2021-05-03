@@ -21,30 +21,30 @@ public class Pray extends BaseTimeEntity {
     private User user; //사용자
 
     @Column(nullable = false)
-    private String pray_type;
+    private String prayType;
 
     @Column(nullable = false)
-    private String pray_title;
+    private String prayTitle;
 
     @Column(columnDefinition = "TEXT")
-    private String pray_content;
+    private String prayContent;
 
     @Builder
-    public Pray(String pray_type, String pray_title, String pray_content) {
-        this.pray_type = pray_type;
-        this.pray_title = pray_title;
-        this.pray_content = pray_content;
+    public Pray(String prayType, String prayTitle, String prayContent) {
+        this.prayType = prayType;
+        this.prayTitle = prayTitle;
+        this.prayContent = prayContent;
     }
 
-    public void update(String pray_type, String pray_title, String pray_content) {
-        this.pray_type = pray_type;
-        this.pray_title = pray_title;
-        this.pray_content = pray_content;
+    public void update(String prayType, String prayTitle, String prayContent) {
+        this.prayType = prayType;
+        this.prayTitle = prayTitle;
+        this.prayContent = prayContent;
     }
 
     //==연관관계 메서드==//
     public void setUser(User user) {
         this.user = user;
-        user.getPrays().add(this);
+        //user.getPrays().add(this);
     }
 }

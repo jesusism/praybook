@@ -9,14 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PrayUpdateRequestDto {
 
-    private String pray_type;
-    private String pray_title;
-    private String pray_content;
+    private String prayType;
+    private String prayTitle;
+    private String prayContent;
 
     @Builder
-    public PrayUpdateRequestDto(String pray_type, String pray_title, String pray_content) {
-        this.pray_type = pray_type;
-        this.pray_title = pray_title;
-        this.pray_content = pray_content;
+    public PrayUpdateRequestDto(String prayType, String prayTitle, String prayContent) {
+        this.prayType = prayType;
+        this.prayTitle = prayTitle;
+        this.prayContent = prayContent;
     }
 }

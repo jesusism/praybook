@@ -8,22 +8,22 @@ import weawe.praybook.domain.User;
 @Getter
 @NoArgsConstructor
 public class UserSaveRequestDto {
-    private String user_name;
-    private String user_email;
-    private String user_church;
+    private String name;
+    private String email;
+    private String picture;
 
     @Builder
-    public UserSaveRequestDto(String user_name, String user_email, String user_church) {
-        this.user_name = user_name;
-        this.user_email = user_email;
-        this.user_church = user_church;
+    public UserSaveRequestDto(String name, String email, String picture) {
+        this.name = name;
+        this.email = email;
+        this.picture = picture;
     }
 
     public User toEntity() {
         return User.builder()
-                .user_name(user_name)
-                .user_email(user_email)
-                .user_church(user_church)
+                .name(name)
+                .email(email)
+                .picture(picture)
                 .build();
     }
 

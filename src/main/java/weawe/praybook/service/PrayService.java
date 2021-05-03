@@ -27,7 +27,7 @@ public class PrayService {
     public Long update(Long id, PrayUpdateRequestDto requestDto) {
         Pray pray = prayRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 기도 없습니다. id="+ id));
-        pray.update(requestDto.getPray_type(), requestDto.getPray_title(), requestDto.getPray_content());
+        pray.update(requestDto.getPrayType(), requestDto.getPrayTitle(), requestDto.getPrayContent());
         return id;
     }
 

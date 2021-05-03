@@ -8,14 +8,14 @@ import weawe.praybook.domain.User;
 @NoArgsConstructor
 public class UserResponseDto {
     private Long id;
-    private String user_name;
-    private String user_email;
-    private String user_church;
+    private String name;
+    private String email;
+    private String picture;
 
     public UserResponseDto(User entity) {
         this.id = entity.getId();
-        this.user_name = entity.getUser_name();
-        this.user_email = entity.getUser_email();
-        this.user_church = entity.getUser_church();
+        this.name = entity.getName();
+        this.email = entity.getEmail();
+        this.picture = entity.getPicture();
     }
 }

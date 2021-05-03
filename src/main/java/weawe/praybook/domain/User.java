@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -14,33 +12,41 @@ import java.util.List;
 public class User extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue
     @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String user_name;
+    private String name;
 
     @Column(nullable = false)
-    private String user_email;
+    private String email;
 
-    @Column(nullable = true)
-    private String user_church;
+    @Column
+    private String picture;
 
-    @OneToMany(mappedBy = "user")
-    private List<Pray> prays = new ArrayList<>();
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
 
     @Builder
-    public User(String user_name, String user_email, String user_church) {
-        this.user_name = user_name;
-        this.user_email = user_email;
-        this.user_church = user_church;
+    public User(String name, String email, String picture, Role role) {
+        this.name = name;
+        this.email = email;
+        this.picture = picture;
+        this.role = role;
     }
 
-    public void update(String user_name, String user_email, String user_church) {
-        this.user_name = user_name;
-        this.user_email = user_email;
-        this.user_church = user_church;
+    public User update(String name, String email, String picture) {
+        this.name = name;
+        this.email = email;
+        this.picture = picture;
+
+        return this;
     }
 
+    public String getRoleKey() {
+
+        return this.role.getKey();
+    }
 }

@@ -7,9 +7,9 @@ var main = {
     },
     save : function () {
         var data = {
-            user_name : $("#user_name").val(),
-            user_email : $("#user_email").val(),
-            user_church : $("#user_church").val()
+            name : $("#name").val(),
+            email : $("#email").val(),
+            picture : $("#picture").val()
         };
 
         $.ajax({
