@@ -1,4 +1,4 @@
-package weawe.praybook.web;
+package weawe.praybook.web.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

@@ -45,6 +45,6 @@ public class Pray extends BaseTimeEntity {
     //==연관관계 메서드==//
     public void setUser(User user) {
         this.user = user;
-        //user.getPrays().add(this);
+        user.getPray().add(this);
     }
 }

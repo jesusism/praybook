@@ -1,4 +1,4 @@
-package weawe.praybook.web;
+package weawe.praybook.web.api;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

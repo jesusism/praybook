@@ -10,12 +10,14 @@ import weawe.praybook.domain.Pray;
 @NoArgsConstructor
 public class PraySaveRequestDto {
 
+    private Long userId;
     private String prayType;
     private String prayTitle;
     private String prayContent;
 
     @Builder
-    public PraySaveRequestDto(String prayType, String prayTitle, String prayContent) {
+    public PraySaveRequestDto(Long userId, String prayType, String prayTitle, String prayContent) {
+        this.userId = userId;
         this.prayType = prayType;
         this.prayTitle = prayTitle;
         this.prayContent = prayContent;
