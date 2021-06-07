@@ -31,6 +31,7 @@ public class PrayService {
         return id;
     }
 
+    @Transactional
     public PrayResponseDto findById (Long id) {
         Pray entity = prayRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 기도 없습니다. id="+ id));
@@ -48,7 +49,8 @@ public class PrayService {
     public void delete (Long id) {
         Pray pray = prayRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 기도 없습니다 id=" + id));
-
+        
         prayRepository.delete(pray);
     }
+
 }

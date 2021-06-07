@@ -17,6 +17,5 @@ public class UserListResponseDto {
         this.id = entity.getId();
         this.name = entity.getName();
         this.email = entity.getEmail();
-        this.picture = entity.getPicture();
     }
 }

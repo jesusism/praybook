@@ -16,15 +16,15 @@ public class UserApiController {
     private final UserService userService;
 
     @PostMapping("/api/user")
-    public Long save(@RequestBody UserSaveRequestDto requestDto) {
+    public Long save(@RequestBody UserSaveRequestDto userSaveRequestDto) {
         log.info("UserApiController-save");
-        return userService.save(requestDto);
+        return userService.save(userSaveRequestDto);
     }
 
     @PutMapping("/api/user/{id}")
-    public Long update(@PathVariable Long id, @RequestBody UserUpdateRequestDto requestDto) {
+    public Long update(@PathVariable Long id, @RequestBody UserUpdateRequestDto userUpdateRequestDto) {
         log.info("UserApiController-update");
-        return userService.update(id, requestDto);
+        return userService.update(id, userUpdateRequestDto);
     }
 
     @GetMapping("/api/user/{id}")
